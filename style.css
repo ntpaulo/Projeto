@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --textcolor: white;
+  --bgurl: url(./assets/bg-mobile.jpg);
+  --bordabtn: rgba(255, 255, 255, 0.5);
+  --bgbtn: rgba(255, 255, 255, 0.1);
+  --bgbtnhover: rgba(0, 0, 0, 0.5);
+  --sociallinkhover: rgba(255, 255, 255, 0.2);
+  --bgbtnurl: url(./assets/moonstars.svg);
+  --box-shadow: rgba(209, 208, 208, 0.5);
+}
+
+.light {
+  --textcolor: black;
+  --bgurl: url(./assets/bg-mobile-light.jpg);
+  --bordabtn: rgba(0, 0, 0, 0.5);
+  --bgbtn: rgba(0, 0, 0, 0.05);
+  --bgbtnhover: rgba(0, 0, 0, 0.02);
+  --sociallinkhover: rgba(0, 0, 0, 0.1);
+  --bgbtnurl: url(./assets/moonsun.svg);
+  --box-shadow: rgba(0, 0, 0, 0.5);
+}
+body {
+  /*background: imagem, no repeat, position/size*/
+  background: var(--bgurl) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--textcolor);
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0;
+  padding: 0 24px;
+
+  /*profile*/
+}
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*switch*/
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--bgbtnurl) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0px 2px 8px 0px var(--box-shadow);
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+
+  border-radius: 9999px;
+  border: 1px solid var(--bordabtn);
+  background: var(--bgbtn);
+  backdrop-filter: blur(4px);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+/*Links*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  border-radius: 8px;
+  border: 1px solid var(--bordabtn);
+  background: var(--bgbtn);
+  backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2;
+}
+
+ul li a:hover {
+  background: var(--bgbtnhover);
+  border: 1.5px solid var(--textcolor);
+}
+
+/*social links*/
+#social-links {
+  display: flex;
+  padding: 24px 0;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--sociallinkhover);
+}
+
+/*rodapé*/
+footer {
+  font-size: 14px;
+  text-align: center;
+  padding: 24px 0;
+}
